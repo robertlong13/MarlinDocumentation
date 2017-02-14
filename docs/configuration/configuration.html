@@ -36,12 +36,12 @@
 <meta property="og:url" content="http://marlinfw.org/docs/configuration/configuration.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-02-14T10:24:23+00:00">
+<meta property="article:published_time" content="2017-02-14T10:36:00+00:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Configuring Marlin",
-"datePublished": "2017-02-14T10:24:23+00:00",
+"datePublished": "2017-02-14T10:36:00+00:00",
 "description": "Complete guide to Marlin configuration options.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -2028,13 +2028,6 @@
 </div>
 <p>For SCARA use the sample configuration in the <code class="highlighter-rouge">example_configurations/SCARA</code> folder as a starting point.</p>
 
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">// Enable this option for Toshiba steppers
-//#define CONFIG_STEPPERS_TOSHIBA
-</span></code></pre>
-</div>
-<p>Leave this option disabled for typical stepper drivers such as A4988 or DVR8825.</p>
-
 <p><img src="/assets/images/config/endstop.jpg" alt="Endstop switch" class="floater"></p>
 
 <h2 id="endstops">Endstops</h2>
@@ -2482,6 +2475,15 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 </span></code></pre>
 </div>
 <p>These settings reverse the motor direction for each axis. Be careful when first setting these. Axes moving the wrong direction can cause damage. Get these right without belts attached first, if possible. Before testing, move the carriage and bed to the middle. Test each axis for proper movemnt using the host or LCD “Move Axis” menu. If an axis is inverted, either flip the plug around or change its invert setting.</p>
+
+<h3 id="toshiba-drivers">Toshiba Drivers</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">// Enable this option for Toshiba stepper drivers
+//#define CONFIG_STEPPERS_TOSHIBA
+</span></code></pre>
+</div>
+<p>Leave this option disabled for typical stepper drivers such as A4988 or DVR8825.</p>
 
 <h2 id="homing-and-bounds">Homing and Bounds</h2>
 
