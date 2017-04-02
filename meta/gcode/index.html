@@ -36,12 +36,12 @@
 <meta property="og:url" content="http://marlinfw.org/meta/gcode/">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-02-14T11:16:13+00:00">
+<meta property="article:published_time" content="2017-04-02T20:49:27+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Gcode",
-"datePublished": "2017-02-14T11:16:13+00:00",
+"datePublished": "2017-04-02T20:49:27+01:00",
 "description": "Printing the planet, one layer at a time.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -3673,7 +3673,7 @@ G5 I0 J3 P0 Q-3 X1 Y1</code></pre></figure>
   <div class="col-lg-12">
     
       
-        <p>Retract the filament according to settings of <a href="M207.html"><code class="highlighter-rouge">M207</code></a>.</p>
+        <p>Retract the filament according to settings of <a href="/docs/gcode/M207.html"><code class="highlighter-rouge">M207</code></a>.</p>
 
       
     
@@ -3764,7 +3764,7 @@ G5 I0 J3 P0 Q-3 X1 Y1</code></pre></figure>
   <div class="col-lg-12">
     
       
-        <p>Unretracts the filament according to settings of <a href="M208.html"><code class="highlighter-rouge">M208</code></a>.</p>
+        <p>Unretracts the filament according to settings of <a href="/docs/gcode/M208.html"><code class="highlighter-rouge">M208</code></a>.</p>
 
       
     
@@ -4754,7 +4754,7 @@ G5 I0 J3 P0 Q-3 X1 Y1</code></pre></figure>
 <code class="highlighter-rouge">AUTO_BED_LEVELING_LINEAR</code> also uses a tilt matrix but probes a grid and applies “least-squares.”</li>
   <li>
 <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> probes a grid and produces a mesh to adjust Z across the bed.</li>
-  <li>There is also a manual <a href="G29-mbl.html"><code class="highlighter-rouge">MESH_BED_LEVELING</code></a> option for setups without a probe.</li>
+  <li>There is also a manual <a href="/docs/gcode/G029-mbl.html"><code class="highlighter-rouge">MESH_BED_LEVELING</code></a> option for setups without a probe.</li>
 </ul>
 
       
@@ -5432,7 +5432,7 @@ G5 I0 J3 P0 Q-3 X1 Y1</code></pre></figure>
       
         <p>With Mesh Bed Leveling (MBL) you can interactively measure a grid of Z heights without a bed probe. The only tool required is a piece of paper or a feeler gauge. MBL uses the mesh to compensate for variations in height across the bed.</p>
 
-<p>This feature is enabled with the <code class="highlighter-rouge">MESH_BED_LEVELING</code> option in <code class="highlighter-rouge">Configuration.h</code>. Users with a probe should enable one of the <a href="G29.html"><code class="highlighter-rouge">AUTO_BED_LEVELING_*</code></a> options instead.</p>
+<p>This feature is enabled with the <code class="highlighter-rouge">MESH_BED_LEVELING</code> option in <code class="highlighter-rouge">Configuration.h</code>. Users with a probe should enable one of the <a href="/docs/gcode/G029-abl.html"><code class="highlighter-rouge">AUTO_BED_LEVELING_*</code></a> options instead.</p>
 
 <p>The procedure for Mesh Bed Leveling from your host software:</p>
 
@@ -6402,7 +6402,7 @@ v Y-axis  1-n</code></pre></figure>
   <div class="col-lg-12">
     
       
-        <p>In absolute mode all coordinates given in G-Code are interpreted as positions in the logical coordinate space. This includes the extruder position unless overridden by <a href="M083.html"><code class="highlighter-rouge">M83</code></a>.</p>
+        <p>In absolute mode all coordinates given in G-Code are interpreted as positions in the logical coordinate space. This includes the extruder position unless overridden by <a href="/docs/gcode/M083.html"><code class="highlighter-rouge">M83</code></a>.</p>
 
       
     
@@ -6482,7 +6482,7 @@ v Y-axis  1-n</code></pre></figure>
   <div class="col-lg-12">
     
       
-        <p>Set relative position mode. In this mode all coordinates are interpreted as relative to the last position. This includes the extruder position unless overridden by <a href="M082.html"><code class="highlighter-rouge">M82</code></a>.</p>
+        <p>Set relative position mode. In this mode all coordinates are interpreted as relative to the last position. This includes the extruder position unless overridden by <a href="/docs/gcode/M082.html"><code class="highlighter-rouge">M82</code></a>.</p>
 
       
     
@@ -10475,7 +10475,7 @@ v Y-axis  1-n</code></pre></figure>
   <div class="col-lg-12">
     
       
-        <p>Use <code class="highlighter-rouge">M92</code> to set the steps-per-unit for one or more axes. This setting affects how many steps will be done for each unit of movement. Units will be in steps/mm unless <em>inch</em> mode is set with <a href="G020.html"><code class="highlighter-rouge">G20</code></a> (which requires <code class="highlighter-rouge">INCH_MODE_SUPPORT</code>).</p>
+        <p>Use <code class="highlighter-rouge">M92</code> to set the steps-per-unit for one or more axes. This setting affects how many steps will be done for each unit of movement. Units will be in steps/mm unless <em>inch</em> mode is set with <a href="/docs/gcode/G020.html"><code class="highlighter-rouge">G20</code></a> (which requires <code class="highlighter-rouge">INCH_MODE_SUPPORT</code>).</p>
 
       
     
@@ -11059,7 +11059,7 @@ v Y-axis  1-n</code></pre></figure>
         <p>Set a new target hot end temperature and continue without waiting. The firmware will continue to try to reach and hold the temperature in the background.</p>
 
       
-        <p>Use <a href="M109.html"><code class="highlighter-rouge">M109</code></a> to wait for the hot end to reach the target temperature.</p>
+        <p>Use <a href="/docs/gcode/M109.html"><code class="highlighter-rouge">M109</code></a> to wait for the hot end to reach the target temperature.</p>
 
       
     
@@ -11666,7 +11666,7 @@ v Y-axis  1-n</code></pre></figure>
           <p><code class="highlighter-rouge">M106</code> with no speed sets the fan to full speed.</p>
 
         
-          <p>Turn off fans with <a href="M107.html"><code class="highlighter-rouge">M107</code></a>.</p>
+          <p>Turn off fans with <a href="/docs/gcode/M107.html"><code class="highlighter-rouge">M107</code></a>.</p>
 
         
     </div>
@@ -11823,7 +11823,7 @@ v Y-axis  1-n</code></pre></figure>
     <div class="col-lg-12">
       <h2>Notes</h2>
         
-          <p>Turn on fans with <a href="M106.html"><code class="highlighter-rouge">M106</code></a>.</p>
+          <p>Turn on fans with <a href="/docs/gcode/M106.html"><code class="highlighter-rouge">M106</code></a>.</p>
 
         
     </div>
@@ -12219,10 +12219,10 @@ M108               ; as your "Continue" button</code></pre></figure>
           <p>With <code class="highlighter-rouge">PRINTJOB_TIMER_AUTOSTART</code> this command will start the print job if heating, and stop the print job timer if the temperature is set at or below half of <code class="highlighter-rouge">EXTRUDE_MINTEMP</code>.</p>
 
         
-          <p>This command (and <a href="M190.html"><code class="highlighter-rouge">M190</code></a>) can block new commands from the host. To break out of wait for temperature using <code class="highlighter-rouge">M108</code> from the host, enable <code class="highlighter-rouge">EMERGENCY_PARSER</code>.</p>
+          <p>This command (and <a href="/docs/gcode/M190.html"><code class="highlighter-rouge">M190</code></a>) can block new commands from the host. To break out of wait for temperature using <code class="highlighter-rouge">M108</code> from the host, enable <code class="highlighter-rouge">EMERGENCY_PARSER</code>.</p>
 
         
-          <p>Use <a href="M104.html"><code class="highlighter-rouge">M104</code></a> to set the hot end temperature and proceed without waiting.</p>
+          <p>Use <a href="/docs/gcode/M104.html"><code class="highlighter-rouge">M104</code></a> to set the hot end temperature and proceed without waiting.</p>
 
         
     </div>
@@ -12480,17 +12480,21 @@ M108               ; as your "Continue" button</code></pre></figure>
 
 <ul>
   <li>
-<code class="highlighter-rouge"> 1 ECHO</code> - Echo all commands sent to the parser.</li>
+<code class="highlighter-rouge">  1 ECHO</code> - Echo all commands sent to the parser.</li>
   <li>
-<code class="highlighter-rouge"> 2 INFO</code> - Print extra informational messages.</li>
+<code class="highlighter-rouge">  2 INFO</code> - Print extra informational messages.</li>
   <li>
-<code class="highlighter-rouge"> 4 ERRORS</code> - Print extra error messages.</li>
+<code class="highlighter-rouge">  4 ERRORS</code> - Print extra error messages.</li>
   <li>
-<code class="highlighter-rouge"> 8 DRYRUN</code> - Don’t extrude, don’t save leveling data, etc.</li>
+<code class="highlighter-rouge">  8 DRYRUN</code> - Don’t extrude, don’t save leveling data, etc.</li>
   <li>
-<code class="highlighter-rouge">16 COMMUNICATION</code> - Not currently used.</li>
+<code class="highlighter-rouge"> 16 COMMUNICATION</code> - Not currently used.</li>
   <li>
-<code class="highlighter-rouge">32 LEVELING</code> - Detailed messages for homing, probing, and leveling. (Requires <code class="highlighter-rouge">DEBUG_LEVELING_FEATURE</code>.)</li>
+<code class="highlighter-rouge"> 32 LEVELING</code> - Detailed messages for homing, probing, and leveling. (Requires <code class="highlighter-rouge">DEBUG_LEVELING_FEATURE</code>.)</li>
+  <li>
+<code class="highlighter-rouge"> 64 Reserved</code> - Reserved for future usage</li>
+  <li>
+<code class="highlighter-rouge">128 Reserved</code> - Reserved for future usage</li>
 </ul>
 
       
@@ -12612,6 +12616,15 @@ M108               ; as your "Continue" button</code></pre></figure>
           
         
         <figure class="highlight"><pre><code class="language-gcode" data-lang="gcode">M111 S8</code></pre></figure>
+        
+      
+        
+          
+            <p>Enable everything except dry-run mode</p>
+
+          
+        
+        <figure class="highlight"><pre><code class="language-gcode" data-lang="gcode">M111 S247 ; 255 - 8</code></pre></figure>
         
       
     </div>
@@ -13966,7 +13979,7 @@ Cap:EMERGENCY_PARSER:1
         <p>Set a new target heated bed temperature and continue without waiting. The firmware will continue to try to reach and hold the temperature in the background.</p>
 
       
-        <p>Use <a href="M190.html"><code class="highlighter-rouge">M190</code></a> to wait for the bed to reach the target temperature.</p>
+        <p>Use <a href="/docs/gcode/M190.html"><code class="highlighter-rouge">M190</code></a> to wait for the bed to reach the target temperature.</p>
 
       
     
@@ -15973,10 +15986,10 @@ M164 S4</code></pre></figure>
     <div class="col-lg-12">
       <h2>Notes</h2>
         
-          <p>This command (and <a href="M109.html"><code class="highlighter-rouge">M109</code></a>) can block new commands from the host. To break out of wait for temperature using <code class="highlighter-rouge">M108</code> from the host, enable <code class="highlighter-rouge">EMERGENCY_PARSER</code>.</p>
+          <p>This command (and <a href="/docs/gcode/M109.html"><code class="highlighter-rouge">M109</code></a>) can block new commands from the host. To break out of wait for temperature using <code class="highlighter-rouge">M108</code> from the host, enable <code class="highlighter-rouge">EMERGENCY_PARSER</code>.</p>
 
         
-          <p>Use <a href="M140.html"><code class="highlighter-rouge">M140</code></a> to set the bed temperature and proceed without waiting.</p>
+          <p>Use <a href="/docs/gcode/M140.html"><code class="highlighter-rouge">M140</code></a> to set the bed temperature and proceed without waiting.</p>
 
         
     </div>
@@ -17843,7 +17856,7 @@ M200 D  ; also works</code></pre></figure>
   <li>View the current offsets with <code class="highlighter-rouge">M503</code>.</li>
   <li>If <code class="highlighter-rouge">EEPROM_SETTINGS</code> is enabled, the home offsets are saved with <code class="highlighter-rouge">M500</code>, loaded with <code class="highlighter-rouge">M501</code>, and reset with <code class="highlighter-rouge">M502</code>.</li>
   <li>
-<a href="M428.html"><code class="highlighter-rouge">M428</code></a> sets home offsets so the current position aligns to the native home position.</li>
+<a href="/docs/gcode/M428.html"><code class="highlighter-rouge">M428</code></a> sets home offsets so the current position aligns to the native home position.</li>
 </ul>
 
         
@@ -23254,7 +23267,7 @@ M302 S170 P1 ; set min extrude temp to 170 but leave disabled</code></pre></figu
           <ul>
   <li>Changing the home offsets will not invalidate bed leveling or other saved data.</li>
   <li>If <code class="highlighter-rouge">EEPROM_SETTINGS</code> is enabled, the home offsets are saved with <code class="highlighter-rouge">M500</code>, loaded with <code class="highlighter-rouge">M501</code>, and reset with <code class="highlighter-rouge">M502</code>.</li>
-  <li>Use <a href="M206.html"><code class="highlighter-rouge">M206</code></a> to set the home offsets directly.</li>
+  <li>Use <a href="/docs/gcode/M206.html"><code class="highlighter-rouge">M206</code></a> to set the home offsets directly.</li>
 </ul>
 
         
@@ -23518,7 +23531,7 @@ M428</code></pre></figure>
         <p>Reset all configurable settings to their factory defaults.</p>
 
       
-        <p>To also reset settings in EEPROM, follow with <a href="M502.html"><code class="highlighter-rouge">M502</code></a>.</p>
+        <p>To also reset settings in EEPROM, follow with <a href="/docs/gcode/M501.html"><code class="highlighter-rouge">M501</code></a>.</p>
 
       
     

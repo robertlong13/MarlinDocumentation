@@ -36,12 +36,12 @@
 <meta property="og:url" content="http://marlinfw.org/docs/gcode/M111.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-02-14T11:16:13+00:00">
+<meta property="article:published_time" content="2017-04-02T20:49:27+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Debug Level",
-"datePublished": "2017-02-14T11:16:13+00:00",
+"datePublished": "2017-04-02T20:49:27+01:00",
 "description": "",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -2126,17 +2126,21 @@
 
 <ul>
   <li>
-<code class="highlighter-rouge"> 1 ECHO</code> - Echo all commands sent to the parser.</li>
+<code class="highlighter-rouge">  1 ECHO</code> - Echo all commands sent to the parser.</li>
   <li>
-<code class="highlighter-rouge"> 2 INFO</code> - Print extra informational messages.</li>
+<code class="highlighter-rouge">  2 INFO</code> - Print extra informational messages.</li>
   <li>
-<code class="highlighter-rouge"> 4 ERRORS</code> - Print extra error messages.</li>
+<code class="highlighter-rouge">  4 ERRORS</code> - Print extra error messages.</li>
   <li>
-<code class="highlighter-rouge"> 8 DRYRUN</code> - Don’t extrude, don’t save leveling data, etc.</li>
+<code class="highlighter-rouge">  8 DRYRUN</code> - Don’t extrude, don’t save leveling data, etc.</li>
   <li>
-<code class="highlighter-rouge">16 COMMUNICATION</code> - Not currently used.</li>
+<code class="highlighter-rouge"> 16 COMMUNICATION</code> - Not currently used.</li>
   <li>
-<code class="highlighter-rouge">32 LEVELING</code> - Detailed messages for homing, probing, and leveling. (Requires <code class="highlighter-rouge">DEBUG_LEVELING_FEATURE</code>.)</li>
+<code class="highlighter-rouge"> 32 LEVELING</code> - Detailed messages for homing, probing, and leveling. (Requires <code class="highlighter-rouge">DEBUG_LEVELING_FEATURE</code>.)</li>
+  <li>
+<code class="highlighter-rouge"> 64 Reserved</code> - Reserved for future usage</li>
+  <li>
+<code class="highlighter-rouge">128 Reserved</code> - Reserved for future usage</li>
 </ul>
 
       
@@ -2261,6 +2265,17 @@
         
         
 <figure class="highlight"><pre><code class="language-gcode" data-lang="gcode">M111 S8</code></pre></figure>
+
+        
+      
+        
+          
+            <p>Enable everything except dry-run mode</p>
+
+          
+        
+        
+<figure class="highlight"><pre><code class="language-gcode" data-lang="gcode">M111 S247 ; 255 - 8</code></pre></figure>
 
         
       
