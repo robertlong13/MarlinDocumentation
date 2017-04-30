@@ -32,21 +32,21 @@
 <meta property="og:title" content="Contributing Code with Pull Requests">
 <meta name="author" content="Bob-the-Kuhn, thinkyhead">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="How to get Marlin code, modify it, upload it &amp; do a pull request">
-<meta property="og:description" content="How to get Marlin code, modify it, upload it &amp; do a pull request">
+<meta name="description" content="How to get Marlin, modify, upload, and &amp; do pull requests">
+<meta property="og:description" content="How to get Marlin, modify, upload, and &amp; do pull requests">
 <link rel="canonical" href="http://marlinfw.org/docs/development/getting_started_pull_requests.html">
 <meta property="og:url" content="http://marlinfw.org/docs/development/getting_started_pull_requests.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-04-30T22:57:42+01:00">
+<meta property="article:published_time" content="2017-04-30T23:07:16+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Contributing Code with Pull Requests",
 "author": {"@type": "Person",
 "name": "Bob-the-Kuhn, thinkyhead"},
-"datePublished": "2017-04-30T22:57:42+01:00",
-"description": "How to get Marlin code, modify it, upload it &amp; do a pull request",
+"datePublished": "2017-04-30T23:07:16+01:00",
+"description": "How to get Marlin, modify, upload, and &amp; do pull requests",
 "publisher": {"@type": "Organization",
 "name": "Bob-the-Kuhn, thinkyhead",
 "logo": {"@type": "ImageObject",
@@ -1774,7 +1774,7 @@ The top level steps of doing this are:</p>
 <p>Open Desktop, select your repository (on the left side), select your branch (top left), click on <code class="highlighter-rouge">Changes</code> (top middle) and then click on <code class="highlighter-rouge">open this repository</code> (right middle)</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_37.jpg" alt="image37">
-A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">Marlin</code> directory to your work area.  Close the Windows Explorer window and close Desktop.</p>
+A Windows Explorer window will popup. Copy the <code class="highlighter-rouge">Marlin</code> directory to your work area. Close the Windows Explorer window and close Desktop.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_38.jpg" alt="image38"></p>
 
@@ -1786,13 +1786,13 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p>Open Desktop and the Windows Explorer window as before</p>
 
-<p>Copy the changed files into the new Windows Explorer window.  Alternatively you can just copy your entire directory over.  GitHub will check the newly copied files against the old and only list the ones that have changed.</p>
+<p>Copy the changed files into the new Windows Explorer window. Alternatively you can just copy your entire directory over. GitHub will check the newly copied files against the old and only list the ones that have changed.</p>
 
 <p>Finish the commit and sync as you did previously in <code class="highlighter-rouge">Commit changes to your working copy</code></p>
 
 <p><em>**Since this branch is tied to a PR, the PR is also updated when you do the sync. **</em></p>
 
-<p>Most of the time you’ve made changes to the Configuration.h and Configuration_adv.h files that are specific to your printer.  Do NOT upload those to the PR.  This can be done multiple ways:</p>
+<p>Most of the time you’ve made changes to the Configuration.h and Configuration_adv.h files that are specific to your printer. Do NOT upload those to the PR. This can be done multiple ways:</p>
 <ul>
   <li>Don’t copy them into the GitHub directory</li>
   <li>Don’t include them in the commit</li>
@@ -1802,7 +1802,7 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <h3 id="resolve-all-checks-have-failed-issues">Resolve `All checks have failed’ issues</h3>
 
-<p>Tests are run on the code when you created the PR and every time you commit new code to the PR.  The tests basically consist of multiple cycles of enabling various options and then compiling.  These must be resolved before the PR can be merged into the mainstream Marlin code.</p>
+<p>Tests are run on the code when you created the PR and every time you commit new code to the PR. The tests basically consist of multiple cycles of enabling various options and then compiling. These must be resolved before the PR can be merged into the mainstream Marlin code.</p>
 
 <p>Within 30-90 seconds of doing the sync the PR will have a section that looks like this:</p>
 
@@ -1812,25 +1812,25 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p><img src="/assets/images/docs/development/pull_images/pull_40.jpg" alt="image40"></p>
 
-<p>If you see this instead then there are problems that need to be fixed.  You don’t have to fix them immediately but they must be fixed before the PR can be merged into the mainstream Marlin code.</p>
+<p>If you see this instead then there are problems that need to be fixed. You don’t have to fix them immediately but they must be fixed before the PR can be merged into the mainstream Marlin code.</p>
 
 <p>To see the errors click on <code class="highlighter-rouge">Details</code></p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_41.jpg" alt="image41"></p>
 
-<p>This will bring up the <code class="highlighter-rouge">Travis</code> log.  Green means that the test has passed.  Red means there’s a problem.</p>
+<p>This will bring up the <code class="highlighter-rouge">Travis</code> log. Green means that the test has passed. Red means there’s a problem.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_42.jpg" alt="image42"></p>
 
 <p>It’s recommended that you include the fixes in the next code you commit.</p>
 
-<p>The errors you`re looking at come from the compiler.  Resolve just like you do when compiling on your local machine.</p>
+<p>The errors you`re looking at come from the compiler. Resolve just like you do when compiling on your local machine.</p>
 
-<p>Unfortunately the Travis log does not include the options that were enabled when the errors were found.  That makes it harder to reproduce the problem locally.</p>
+<p>Unfortunately the Travis log does not include the options that were enabled when the errors were found. That makes it harder to reproduce the problem locally.</p>
 
 <h3 id="make-the-pr-pretty--sync-to-main-repository">Make the PR pretty &amp; sync to main repository</h3>
 
-<p>Before a PR is merged we need to get the number of commits down to one.  It’s so much easier to see what’s going on when all the changes are easily available.  If you have multiple commits then you need to go to each individual commit to see what that one changed and pretty soon you’ve lost track.</p>
+<p>Before a PR is merged we need to get the number of commits down to one. It’s so much easier to see what’s going on when all the changes are easily available. If you have multiple commits then you need to go to each individual commit to see what that one changed and pretty soon you’ve lost track.</p>
 
 <p>The other thing this process does is incorporate any code changes in the main Marlin code that have been done since the PR was created or the last time this process was run.</p>
 
@@ -1838,9 +1838,9 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p>This process uses a command window/shell to issue GIT commands.</p>
 
-<p>Open Desktop and open the Windows Explorer window.  Make a copy of the directory.  You may use it later.</p>
+<p>Open Desktop and open the Windows Explorer window. Make a copy of the directory. You may use it later.</p>
 
-<p>Next right click on the repository.  A submenu will popup.  Click on <code class="highlighter-rouge">Open in Git Shell</code></p>
+<p>Next right click on the repository. A submenu will popup. Click on <code class="highlighter-rouge">Open in Git Shell</code>.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_43.jpg" alt="image43"></p>
 
@@ -1852,7 +1852,7 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p><img src="/assets/images/docs/development/pull_images/pull_45.jpg" alt="image45"></p>
 
-<p>If the upstream section is missing then copy &amp; paste <code class="highlighter-rouge">Git remote add upstream https://Github.com/MarlinFirmware/Marlin.Git</code>  and then hit return.</p>
+<p>If the upstream section is missing then copy &amp; paste <code class="highlighter-rouge">Git remote add upstream https://github.com/MarlinFirmware/Marlin.git</code> and then hit return.</p>
 
 <p>Next copy &amp; paste <code class="highlighter-rouge">Git fetch upstream</code> followed by <code class="highlighter-rouge">Git rebase upstream/RCBugFix</code> . If no problems are encountered the next text will look like this.</p>
 
@@ -1862,31 +1862,31 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p><img src="/assets/images/docs/development/pull_images/pull_47.jpg" alt="image47"></p>
 
-<p>It`ll tell you the number of files that need to be looked at and the names of the files.  In this example there is one file that needs attention.</p>
+<p>It`ll tell you the number of files that need to be looked at and the names of the files. In this example there is one file that needs attention.</p>
 
 <p>Git marks the areas of concern within the file and then writes the modified file to the directory you opened with Desktop.</p>
 
-<p>Open the modified file (the file name didn’t change but the time stamp did) and search for  <code class="highlighter-rouge">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>.  This marks the beginning of the code that could be newer than what you started with.  The <code class="highlighter-rouge">=======</code>  marks the boundary between the newer code and the original code in your file.  <code class="highlighter-rouge">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> marks the end of of the code that needs attention.  <code class="highlighter-rouge">#endif in wrong place</code> is the title of the commit that GIT couldn’t automatically handle.</p>
+<p>Open the modified file (the file name didn’t change but the time stamp did) and search for <code class="highlighter-rouge">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>. This marks the beginning of the code that could be newer than what you started with. The <code class="highlighter-rouge">=======</code> marks the boundary between the newer code and the original code in your file. <code class="highlighter-rouge">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> marks the end of of the code that needs attention. <code class="highlighter-rouge">#endif in wrong place</code> is the title of the commit that GIT couldn’t automatically handle.</p>
 
-<p>It can be helpful to consult the copy you made just before opening the Git Shell.  Sometimes you even have to download the latest RCBugFix to understand.</p>
+<p>It can be helpful to consult the copy you made just before opening the Git Shell. Sometimes you even have to download the latest RCBugFix to understand.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_48.jpg" alt="image48"></p>
 
 <p>Write the file back.</p>
 
-<p>Go to Git Shell and enter this <code class="highlighter-rouge">Git add Marlin/configuration_store.cpp</code> .  The circled number will decrement.</p>
+<p>Go to Git Shell and enter this <code class="highlighter-rouge">Git add Marlin/configuration_store.cpp</code>. The circled number will decrement.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_49.jpg" alt="image49"></p>
 
 <p>Repeat the <code class="highlighter-rouge">edit-save-Git-add</code> cycle until all the files have been addressed.</p>
 
-<p>If you couldn’t address all the files then you can enter the following to abort the process:  <code class="highlighter-rouge">Git rebase –abort</code></p>
+<p>If you couldn’t address all the files then you can enter the following to abort the process: <code class="highlighter-rouge">Git rebase –abort</code></p>
 
 <p>If all the files have been addressed then enter this into the Git Shell: <code class="highlighter-rouge">Git rebase –continue</code></p>
 
-<p>The next step is to “squash” the commits.  This takes all the commits and combines them per your instructions.  To start the “squash” process enter this <code class="highlighter-rouge">Git rebase -i upstream/RCBugFix</code></p>
+<p>The next step is to “squash” the commits. This takes all the commits and combines them per your instructions. To start the “squash” process enter this <code class="highlighter-rouge">Git rebase -i upstream/RCBugFix</code></p>
 
-<p>In about 5-10 seconds a Notepad window will pop up.  It starts with the list of the commits that are currently on the PR.  To the extreme left of each line is the action you want performed.  Sometimes extra commits are added if the main code base is being updated while you’re doing a squash.  Check that the first pick is one that you’ve done for this PR. If it isn’t then change it to <code class="highlighter-rouge">drop</code>.  Keep on changing them to <code class="highlighter-rouge">drop</code> until you get to your first commit.  Leave your first commit as <code class="highlighter-rouge">pick</code>.  Change all the other picks in the list to <code class="highlighter-rouge">squash</code></p>
+<p>In about 5-10 seconds a Notepad window will pop up. It starts with the list of the commits that are currently on the PR. To the extreme left of each line is the action you want performed. Sometimes extra commits are added if the main code base is being updated while you’re doing a squash. Check that the first pick is one that you’ve done for this PR. If it isn’t then change it to <code class="highlighter-rouge">drop</code>. Keep on changing them to <code class="highlighter-rouge">drop</code> until you get to your first commit. Leave your first commit as <code class="highlighter-rouge">pick</code>. Change all the other picks in the list to <code class="highlighter-rouge">squash</code></p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_50.jpg" alt="image50"></p>
 
@@ -1894,9 +1894,9 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p><img src="/assets/images/docs/development/pull_images/pull_51.jpg" alt="image51"></p>
 
-<p>In a few seconds a second Notepad window will pop up.  In this one you specify the description portion of the squashed commit.</p>
+<p>In a few seconds a second Notepad window will pop up. In this one you specify the description portion of the squashed commit.</p>
 
-<p>All the lines WITHOUT a leading # will be in the description in the order as in the Notepad window.  Edit the text as desired.  When done save the file and close it.</p>
+<p>All the lines WITHOUT a leading # will be in the description in the order as in the Notepad window. Edit the text as desired. When done save the file and close it.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_52.jpg" alt="image52"></p>
 
@@ -1904,7 +1904,7 @@ A Windows Explorer window will popup.  Copy the <code class="highlighter-rouge">
 
 <p><img src="/assets/images/docs/development/pull_images/pull_53.jpg" alt="image53"></p>
 
-<p>In Git Shell enter <code class="highlighter-rouge">Git push –f</code> to finish the process.  In a few seconds the following text will start to scroll up the page.  When the command prompt appears then everything is done.</p>
+<p>In Git Shell enter <code class="highlighter-rouge">Git push –f</code> to finish the process. In a few seconds the following text will start to scroll up the page. When the command prompt appears then everything is done.</p>
 
 <p><img src="/assets/images/docs/development/pull_images/pull_54.jpg" alt="image54"></p>
 
