@@ -38,14 +38,14 @@
 <meta property="og:url" content="http://marlinfw.org/docs/development/coding_standards.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-04-30T23:07:16+01:00">
+<meta property="article:published_time" content="2017-05-05T02:41:49+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Coding Standards",
 "author": {"@type": "Person",
 "name": "thinkyhead"},
-"datePublished": "2017-04-30T23:07:16+01:00",
+"datePublished": "2017-05-05T02:41:49+01:00",
 "description": "Guidelines for Marlin code formatting, methodologies, and standards.",
 "publisher": {"@type": "Organization",
 "name": "thinkyhead",
@@ -192,7 +192,7 @@
                             </li>
 <li><a href="/docs/configuration/configuration.html">
                               
-                                Configuring Marlin
+                                Configuring Marlin 1.1.0
                               
                             </a></li>
                           
@@ -1545,7 +1545,8 @@
 <p>Indentation is important for readability and maintainability of code, and provides guidance for naïve code editors (e.g., TextMate, Sublime, et. al.) to properly fold code blocks by level.</p>
 
 <ul>
-  <li>2 spaces. Don’t use tabs at all.</li>
+  <li>2 spaces. Don’t use tabs at all. <em>Set your editor to use spaces! Tabs will bite you in the end.</em>
+</li>
   <li>All blocks indented, including <code class="highlighter-rouge">#if</code> blocks and other non-brace compiler blocks</li>
 </ul>
 <pre>
@@ -1738,11 +1739,6 @@ else {
   #endif // !HISFEATURE
 #endif // MYFEATURE
 </pre>
-
-<h2 id="useful-links">Useful links</h2>
-<ul>
-  <li><a href="http://www.atmel.com/images/doc8453.pdf">Atmel AVR4027: Tips and Tricks to Optimize Your C Code for 8-bit AVR Microcontrollers</a></li>
-</ul>
 
             </div>
           </div>

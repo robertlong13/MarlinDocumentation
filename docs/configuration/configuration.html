@@ -28,8 +28,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.2.0 -->
-<title>Configuring Marlin | Marlin 3D Printer Firmware</title>
-<meta property="og:title" content="Configuring Marlin">
+<title>Configuring Marlin 1.1.0 | Marlin 3D Printer Firmware</title>
+<meta property="og:title" content="Configuring Marlin 1.1.0">
 <meta name="author" content="Sarf2k4">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Complete guide to Marlin configuration options.">
@@ -38,14 +38,14 @@
 <meta property="og:url" content="http://marlinfw.org/docs/configuration/configuration.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-04-30T23:07:16+01:00">
+<meta property="article:published_time" content="2017-05-05T02:41:49+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Configuring Marlin",
+"headline": "Configuring Marlin 1.1.0",
 "author": {"@type": "Person",
 "name": "Sarf2k4"},
-"datePublished": "2017-04-30T23:07:16+01:00",
+"datePublished": "2017-05-05T02:41:49+01:00",
 "description": "Complete guide to Marlin configuration options.",
 "publisher": {"@type": "Organization",
 "name": "Sarf2k4",
@@ -192,7 +192,7 @@
                             </li>
 <li><a href="/docs/configuration/configuration.html">
                               
-                                Configuring Marlin
+                                Configuring Marlin 1.1.0
                               
                             </a></li>
                           
@@ -1539,19 +1539,14 @@
   
 
               </p>
-              <h1 class="custom-article-header">Configuring Marlin</h1>
+              <h1 class="custom-article-header">Configuring Marlin 1.1.0</h1>
 <hr>
 
 
   
 
 
-              <div class="container-fluid">  <div class="row alert alert-info custom-alert">    <div class="col-lg-1 col-md-2 visible-lg-block visible-md-block custom-alert-icon">      <i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>    </div>    <div class="col-lg-11 col-md-10 custom-alert-text">      
-<p>This document is based on Marlin 1.1.0 RC8.</p>
-    </div>  </div>
-</div>
-
-<h1 id="introduction">Introduction</h1>
+              <h1 id="introduction">Introduction</h1>
 
 <p>Marlin is a huge C++ program composed of many files, but here we’ll only be talking about the two files that contain all of Marlin’s compile-time configuration options:</p>
 
@@ -1727,14 +1722,6 @@
 
 <p>This value should be set to the total number of E stepper motors on the machine, even if there’s only a single nozzle.</p>
 
-<h3 id="distinct-e-factors">Distinct E Factors</h3>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define DISTINCT_E_FACTORS
-</span></code></pre>
-</div>
-<p>Enable <code class="highlighter-rouge">DISTINCT_E_FACTORS</code> if your extruders are not all mechanically identical. With this setting you can optionally specify different steps-per-mm, max feedrate, and max acceleration for each extruder.</p>
-
 <h3 id="single-nozzle">Single Nozzle</h3>
 
 <div class="language-cpp highlighter-rouge">
@@ -1813,6 +1800,7 @@
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
+#define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_BED 3
 </span></code></pre>
 </div>
@@ -1865,6 +1853,7 @@
 #define HEATER_1_MINTEMP 5
 #define HEATER_2_MINTEMP 5
 #define HEATER_3_MINTEMP 5
+#define HEATER_4_MINTEMP 5
 #define BED_MINTEMP 5
 </span></code></pre>
 </div>
@@ -1882,6 +1871,7 @@
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
+#define HEATER_4_MAXTEMP 275
 #define BED_MAXTEMP 130
 </span></code></pre>
 </div>
@@ -2117,22 +2107,13 @@ This will remove the need to poll the interrupt pins, saving many CPU cycles.</p
 
 <h2 id="movement">Movement</h2>
 
-<h3 id="homing-speed">Homing Speed</h3>
+<h3 id="distinct-e-factors">Distinct E Factors</h3>
 
 <div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">// Homing speeds (mm/m)
-</span><span class="cp">#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+<pre class="highlight"><code><span class="c1">//#define DISTINCT_E_FACTORS
 </span></code></pre>
 </div>
-<p>Homing speed for use in auto home and auto bed leveling. These values may be set to the fastest speeds your machine can achieve. Homing and probing speeds are constrained by the current max feedrate and max acceleration settings.</p>
-
-<div class="container-fluid">  <div class="row alert alert-warning custom-alert">    <div class="col-lg-1 col-md-2 visible-lg-block visible-md-block custom-alert-icon">      <i class="fa fa-exclamation-circle fa-4x" aria-hidden="true"></i>    </div>    <div class="col-lg-11 col-md-10 custom-alert-text">      
-<p>Setting these values too high may result in reduced accuracy and/or skipped steps. Reducing acceleration may help to achieve higher top speeds.</p>
-    </div>  </div>
-</div>
-
-<hr>
+<p>Enable <code class="highlighter-rouge">DISTINCT_E_FACTORS</code> if your extruders are not all mechanically identical. With this setting you can optionally specify different steps-per-mm, max feedrate, and max acceleration for each extruder.</p>
 
 <h3 id="default-steps-per-mm--">Default Steps per mm <em class="fa fa-sticky-note-o" aria-hidden="true"></em> <em class="fa fa-desktop" aria-hidden="true"></em>
 </h3>
@@ -2283,14 +2264,44 @@ This will remove the need to poll the interrupt pins, saving many CPU cycles.</p
 
 <p><img src="/assets/images/config/probe.jpg" alt="Probe" class="floater framed"></p>
 
+<h3 id="probe-pins">Probe Pins</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define Z_MIN_PROBE_ENDSTOP
+</span></code></pre>
+</div>
+<p>If you want to use both probe and end-switch for homing and endstop, enable this. However, This requires extra setups to be done. If you’re using Ramps 1.4, the probe pins are located in D32 of the aux4 array that is also used by the lcd panel. You will have to change the pin assignments from your specified board pin file (for example “pins_RAMPS_14.h”) located at <code class="highlighter-rouge">#define Z_MIN_PROBE_PIN  32</code>. I would change this to pin 19 (z max) since it is rarely if ever used. This extra port is actually the Z Probe that is used for your auto bed leveling.</p>
+
+<p>Another way is to change between these pins: <code class="highlighter-rouge">#define Z_MIN_PROBE_PIN  32</code>, <code class="highlighter-rouge">#define Z_MIN_PIN 18</code>, and <code class="highlighter-rouge">#define Z_MAX_PIN 19</code>  according to your board. This is not for beginners.</p>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="cp">#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+</span></code></pre>
+</div>
+<p>This uses the same pin for the end-switch and the probe. The advantage is that you don’t need to alter any pin-out assignments, however you can only have ONE active at a time.</p>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define DISABLE_Z_MIN_PROBE_ENDSTOP
+</span></code></pre>
+</div>
+<p>This typically disables your probe feature. Only applicable to <code class="highlighter-rouge">//#define Z_MIN_PROBE_ENDSTOP</code> enabled</p>
+
 <h3 id="probe-type">Probe Type</h3>
 
 <p>Marlin supports any kind of probe that can be made to work like a switch. Specific types of probes have different needs.</p>
 
+<h4 id="manual-probe-no-probe">Manual Probe (no probe)</h4>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define PROBE_MANUALLY
+</span></code></pre>
+</div>
+<p>Even if you have no bed probe you can still use any of the core <code class="highlighter-rouge">AUTO_BED_LEVELING_*</code> options below by selecting this option. With <code class="highlighter-rouge">PROBE_MANUALLY</code> the <code class="highlighter-rouge">G29</code> command only moves the nozzle to the next probe point where it pauses. You adjust the Z height with a piece of paper or feeler gauge, then send <code class="highlighter-rouge">G29</code> again to continue to the next point. You can also enable <code class="highlighter-rouge">LCD_BED_LEVELING</code> to add a “Level Bed” Menu item to the LCD for a fully interactive leveling process.</p>
+
 <h4 id="fix-mounted-probe">Fix Mounted Probe</h4>
 
 <div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="cp">#define FIX_MOUNTED_PROBE
+<pre class="highlight"><code><span class="c1">//#define FIX_MOUNTED_PROBE
 </span></code></pre>
 </div>
 <p>This option is for any probe that’s fixed in place, with no need to be deployed or stowed. Specify this type for an inductive probe or when using the nozzle itself as the probe.</p>
@@ -2311,6 +2322,14 @@ This will remove the need to poll the interrupt pins, saving many CPU cycles.</p
 </span></code></pre>
 </div>
 <p>To indicate a Servo Z Probe (e.g., an endstop switch mounted on a rotating arm) just specify the servo index. Use the <code class="highlighter-rouge">M280</code> command to find the best <code class="highlighter-rouge">Z_SERVO_ANGLES</code> values.</p>
+
+<h4 id="solenoid-probe">Solenoid Probe</h4>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define SOLENOID_PROBE
+</span></code></pre>
+</div>
+<p>A probe that is deployed and stowed with a solenoid pin (Defined as <code class="highlighter-rouge">SOL1_PIN</code>.)</p>
 
 <h4 id="z-probe-sled">Z Probe Sled</h4>
 
@@ -2363,36 +2382,6 @@ This will remove the need to poll the interrupt pins, saving many CPU cycles.</p
 </span></code></pre>
 </div>
 <p>Some probes may be more accurate with this option, which causes all probes to be done twice — first fast, then slow. The second result is used as the measured Z position.</p>
-
-<h3 id="z-probe-end-script">Z Probe End Script</h3>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"
-</span></code></pre>
-</div>
-<p>A custom script to do at the very end of <code class="highlighter-rouge">G29</code>. If multiple commands are needed, divide them with <code class="highlighter-rouge">\n</code> (the newline character).</p>
-
-<h3 id="probe-pins">Probe Pins</h3>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define Z_MIN_PROBE_ENDSTOP
-</span></code></pre>
-</div>
-<p>If you want to use both probe and end-switch for homing and endstop, enable this. However, This requires extra setups to be done. If you’re using Ramps 1.4, the probe pins are located in D32 of the aux4 array that is also used by the lcd panel. You will have to change the pin assignments from your specified board pin file (for example “pins_RAMPS_14.h”) located at <code class="highlighter-rouge">#define Z_MIN_PROBE_PIN  32</code>. I would change this to pin 19 (z max) since it is rarely if ever used. This extra port is actually the Z Probe that is used for your auto bed leveling.</p>
-
-<p>Another way is to change between these pins: <code class="highlighter-rouge">#define Z_MIN_PROBE_PIN  32</code>, <code class="highlighter-rouge">#define Z_MIN_PIN 18</code>, and <code class="highlighter-rouge">#define Z_MAX_PIN 19</code>  according to your board. This is not for beginners.</p>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="cp">#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
-</span></code></pre>
-</div>
-<p>This uses the same pin for the end-switch and the probe. The advantage is that you don’t need to alter any pin-out assignments, however you can only have ONE active at a time.</p>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define DISABLE_Z_MIN_PROBE_ENDSTOP
-</span></code></pre>
-</div>
-<p>This typically disables your probe feature. Only applicable to <code class="highlighter-rouge">//#define Z_MIN_PROBE_ENDSTOP</code> enabled</p>
 
 <h3 id="probe-testing">Probe Testing</h3>
 
@@ -2602,11 +2591,56 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 <pre class="highlight"><code><span class="cp">#define ENABLE_LEVELING_FADE_HEIGHT
 </span></code></pre>
 </div>
-<p>Available with both <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> and <code class="highlighter-rouge">MESH_BED_LEVELING</code>, this option adds the <code class="highlighter-rouge">M420 Zn</code> command to set a fade distance over which leveling will be gradually reduced. Above the given Z height, leveling compensation will no longer be applied.</p>
+<p>Available with <code class="highlighter-rouge">MESH_BED_LEVELING</code>, <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code>, and <code class="highlighter-rouge">AUTO_BED_LEVELING_UBL</code>.</p>
 
-<p>This feature exists to prevent irregularities in the bed from propagating through the model’s entire height. This reduces computational requirements and resonance from the Z axis above the fade height.</p>
+<p>This option adds the <code class="highlighter-rouge">Z</code> parameter to <code class="highlighter-rouge">M420</code> which sets a fade distance over which leveling will be gradually reduced. Above the given Z height, leveling compensation will no longer be applied.</p>
+
+<p>This feature exists to prevent irregularities in the bed from propagating through the model’s entire height. Fading out leveling also reduces computational requirements and resonance from the Z axis above the fade height. For a well-aligned machine, this feature can improve print results.</p>
 
 <p>Example: To have leveling fade out over the first 10mm of layer printing use <code class="highlighter-rouge">M420 Z10</code>. If each layer is 0.2mm high, leveling compensation will be reduced by 1/50th (2%) after each layer. Above 10mm the machine will move without compensation.</p>
+
+<h2 id="auto-bed-leveling">Auto Bed Leveling</h2>
+
+<p>Auto Bed Leveling (ABL) is a standard feature on many 3D printers. It takes the guess-work out of getting a good first layer and good bed adhesion.  All forms of bed leveling add <code class="highlighter-rouge">G29</code> Bed Probing, <code class="highlighter-rouge">M420</code> enable/disable, and can save their results to EEPROM with <code class="highlighter-rouge">M500</code>. Bravo!</p>
+
+<p>With ABL enabled:</p>
+
+<ul>
+  <li>
+<code class="highlighter-rouge">G28</code> disables bed leveling, but leaves previous leveling data intact.</li>
+  <li>
+<code class="highlighter-rouge">G29</code> automatically probes the bed at various points, measures the bed height, calculates a correction grid or matrix, and turns on leveling compensation.</li>
+  <li>The item “Level Bed” is added to the LCD menu.</li>
+  <li>
+<code class="highlighter-rouge">M500</code> saves the bed leveling data to EEPROM. Use <code class="highlighter-rouge">M501</code> to load it, <code class="highlighter-rouge">M502</code> to clear it, and <code class="highlighter-rouge">M503</code> to report it.</li>
+  <li>
+<code class="highlighter-rouge">M420 S&lt;bool&gt;</code> can be used to enable/disable bed leveling. For example, <code class="highlighter-rouge">M420 S1</code> must be used after <code class="highlighter-rouge">M501</code> to enable the loaded mesh or matrix, and to re-enable leveling after <code class="highlighter-rouge">G28</code>, which disables leveling compensation.</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define AUTO_BED_LEVELING_3POINT
+//#define AUTO_BED_LEVELING_LINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_UBL
+</span></code></pre>
+</div>
+<p>Enable just one type of Auto Bed Leveling.</p>
+
+<ul>
+  <li>
+<code class="highlighter-rouge">AUTO_BED_LEVELING_3POINT</code> probes three points in a triangle. The flat plane gives a transform matrix suitable to compensate for a flat but tilted bed.</li>
+  <li>
+<code class="highlighter-rouge">AUTO_BED_LEVELING_LINEAR</code> probes the bed in a grid. A transform matrix is produced by least-squares method to compensate for a flat but tilted bed.</li>
+  <li>
+<code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> probes the bed in a grid, with optional Catmull-Rom subdivision. The mesh data is used to adjust Z height across the bed using bilinear interpolation. Good for delta, large, or uneven beds.</li>
+  <li>
+<code class="highlighter-rouge">AUTO_BED_LEVELING_UBL</code> (recommended) combines the features of 3-point, linear, bilinear, and mesh leveling. As with bilinear leveling, the mesh data generated by UBL is used to adjust Z height across the bed using bilinear interpolation. An LCD controller is currently required.</li>
+</ul>
+
+<div class="container-fluid">  <div class="row alert alert-info custom-alert">    <div class="col-lg-1 col-md-2 visible-lg-block visible-md-block custom-alert-icon">      <i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>    </div>    <div class="col-lg-11 col-md-10 custom-alert-text">      
+<p>Only <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> and <code class="highlighter-rouge">AUTO_BED_LEVELING_UBL</code> support <code class="highlighter-rouge">DELTA</code>. Only <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> currently supports <code class="highlighter-rouge">SCARA</code>.</p>
+    </div>  </div>
+</div>
 
 <h2 id="mesh-manual-bed-leveling">Mesh (Manual) Bed Leveling</h2>
 
@@ -2632,49 +2666,6 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
     </div>  </div>
 </div>
 
-<h3 id="mbl-lcd-menu">MBL LCD Menu</h3>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define MANUAL_BED_LEVELING
-</span></code></pre>
-</div>
-<p>Enable to add a “Level Bed” menu item to the LCD that initiates a fully guided leveling procedure. See <a href="/docs/gcode/G029-mbl.html"><code class="highlighter-rouge">G29</code> for MBL</a> for more details.</p>
-
-<h2 id="auto-bed-leveling">Auto Bed Leveling</h2>
-
-<p>Auto Bed Leveling (ABL) is a standard feature on many 3D printers. It takes the guess-work out of getting a good first layer and good bed adhesion.</p>
-
-<p>With ABL enabled:</p>
-
-<ul>
-  <li>
-<code class="highlighter-rouge">G29</code> automatically probes the bed at various points, measures the bed height, calculates a correction grid or matrix, and turns on leveling compensation.</li>
-  <li>The item “Level Bed” is added to the LCD menu.</li>
-  <li>
-<code class="highlighter-rouge">M500</code> saves the bed leveling data to EEPROM. Use <code class="highlighter-rouge">M501</code> to load it, <code class="highlighter-rouge">M502</code> to clear it, and <code class="highlighter-rouge">M503</code> to report it.</li>
-  <li>
-<code class="highlighter-rouge">M420 S&lt;bool&gt;</code> can be used to enable/disable bed leveling. For example, <code class="highlighter-rouge">M420 S1</code> must be used after <code class="highlighter-rouge">M501</code> to enable the loaded mesh or matrix.</li>
-</ul>
-
-<div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="c1">//#define AUTO_BED_LEVELING_3POINT
-//#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
-</span></code></pre>
-</div>
-<p>Enable just one type of Auto Bed Leveling:</p>
-
-<ul>
-  <li>Use <code class="highlighter-rouge">AUTO_BED_LEVELING_3POINT</code> to probe three points. The flat triangle gives a transform suitable to compensate for a flat but tilted bed.</li>
-  <li>Use <code class="highlighter-rouge">AUTO_BED_LEVELING_LINEAR</code> to probe a grid. A transform is produced by least-squares method to compensate for a flat but tilted bed.</li>
-  <li>Use <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> to probe a grid. The mesh data is used to adjust Z height across the bed using bilinear interpolation.</li>
-</ul>
-
-<div class="container-fluid">  <div class="row alert alert-info custom-alert">    <div class="col-lg-1 col-md-2 visible-lg-block visible-md-block custom-alert-icon">      <i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>    </div>    <div class="col-lg-11 col-md-10 custom-alert-text">      
-<p>For Delta and SCARA, only <code class="highlighter-rouge">AUTO_BED_LEVELING_BILINEAR</code> is supported.</p>
-    </div>  </div>
-</div>
-
 <h3 id="linear--bilinear-options">Linear / Bilinear Options</h3>
 
 <div class="language-cpp highlighter-rouge">
@@ -2687,8 +2678,8 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 <p>These settings specify the boundaries for probing with <code class="highlighter-rouge">G29</code>. This will most likely be a sub-section of the bed because probes are not usually able to reach every point that the nozzle can. Take account of the probe’s XY offsets when setting these boundaries.</p>
 
 <div class="language-cpp highlighter-rouge">
-<pre class="highlight"><code><span class="cp">#define ABL_GRID_MAX_POINTS_X 3
-#define ABL_GRID_MAX_POINTS_Y ABL_GRID_MAX_POINTS_X
+<pre class="highlight"><code><span class="cp">#define GRID_MAX_POINTS_X 3
+#define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 </span></code></pre>
 </div>
 <p>These options specify the default number of points to probe in each dimension during <code class="highlighter-rouge">G29</code>.</p>
@@ -2698,6 +2689,16 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 </span></code></pre>
 </div>
 <p>Enable this option if probing should proceed in the Y dimension first instead of X first.</p>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define ABL_BILINEAR_SUBDIVISION
+</span><span class="cp">#if ENABLED(ABL_BILINEAR_SUBDIVISION)
+</span>  <span class="c1">// Number of subdivisions between probe points
+</span>  <span class="cp">#define BILINEAR_SUBDIVISIONS 3
+#endif
+</span></code></pre>
+</div>
+<p>If you have SRAM to spare, this option will multiply the resolution of the bilinear grid using the Catmull-Rom subdivision method. This option only applies to bilinear leveling. If the default value of 3 is too expensive, try 2 or 1. (In Marlin 1.1.1, the default grid will be stored in PROGMEM, as UBL now does.)</p>
 
 <h3 id="3-point-options">3-Point Options</h3>
 
@@ -2711,6 +2712,48 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 </span></code></pre>
 </div>
 <p>These options specify the three points that will be probed during <code class="highlighter-rouge">G29</code>.</p>
+
+<h3 id="unified-bed-leveling-options">Unified Bed Leveling Options</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="cp">#define UBL_MESH_INSET 1          // Mesh inset margin on print area
+#define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+#define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+#define UBL_PROBE_PT_1_X 39       // These set the probe locations for when UBL does a 3-Point leveling
+#define UBL_PROBE_PT_1_Y 180      // of the mesh.
+#define UBL_PROBE_PT_2_X 39
+#define UBL_PROBE_PT_2_Y 20
+#define UBL_PROBE_PT_3_X 180
+#define UBL_PROBE_PT_3_Y 20
+</span></code></pre>
+</div>
+<p>These options specify the inset, grid, and 3-point triangle to use for UBL. Note that probe XY offsets and movement limits may constrain the probeable area of the bed.</p>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define UBL_G26_MESH_EDITING
+</span></code></pre>
+</div>
+<p>Enable this option for <code class="highlighter-rouge">G26</code> Mesh Editing. (Documentation coming soon!)</p>
+
+<h3 id="lcd-level-bed-menu">LCD “Level Bed” Menu</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="cp">#define LCD_BED_LEVELING
+</span></code></pre>
+</div>
+<p>Available with <code class="highlighter-rouge">MESH_BED_LEVELING</code> and <code class="highlighter-rouge">PROBE_MANUALLY</code> (with Auto Bed Leveling).</p>
+
+<p><code class="highlighter-rouge">LCD_BED_LEVELING</code> adds a “Level Bed” menu to the LCD that starts a step-by-step guided leveling procedure that requires no probe. For Mesh Bed Leveling see <a href="/docs/gcode/G029-mbl.html"><code class="highlighter-rouge">G29</code> for MBL</a>, and for <code class="highlighter-rouge">PROBE_MANUALLY</code> see the corresponding article <a href="http://marlinfw.org/docs/gcode/G029-abl.html"><code class="highlighter-rouge">G29</code> for ABL</a>.</p>
+
+<p>See the <code class="highlighter-rouge">Configuration.h</code> file for sub-options.</p>
+
+<h3 id="z-probe-end-script">Z Probe End Script</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">//#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"
+</span></code></pre>
+</div>
+<p>A custom script to do at the very end of <code class="highlighter-rouge">G29</code>. If multiple commands are needed, divide them with <code class="highlighter-rouge">\n</code> (the newline character).</p>
 
 <h2 id="homing-options">Homing Options</h2>
 
@@ -2746,6 +2789,23 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 <p><strong>Z Safe Homing</strong> prevents Z from homing when the probe (or nozzle) is outside bed area by moving to a defined XY point (by default, the middle of the bed) before Z Homing when homing all axes with <code class="highlighter-rouge">G28</code>. As a side-effect, X and Y homing are required before Z homing. If stepper drivers time out, X and Y homing will be required again.</p>
 
 <p>Enable this option if a probe (not an endstop) is being used for Z homing. Z Safe Homing isn’t needed if a Z endstop is used for homing, but it may also be enabled just to have XY always move to some custom position after homing.</p>
+
+<h3 id="homing-speed">Homing Speed</h3>
+
+<div class="language-cpp highlighter-rouge">
+<pre class="highlight"><code><span class="c1">// Homing speeds (mm/m)
+</span><span class="cp">#define HOMING_FEEDRATE_XY (50*60)
+#define HOMING_FEEDRATE_Z  (4*60)
+</span></code></pre>
+</div>
+<p>Homing speed for use in auto home and auto bed leveling. These values may be set to the fastest speeds your machine can achieve. Homing and probing speeds are constrained by the current max feedrate and max acceleration settings.</p>
+
+<div class="container-fluid">  <div class="row alert alert-warning custom-alert">    <div class="col-lg-1 col-md-2 visible-lg-block visible-md-block custom-alert-icon">      <i class="fa fa-exclamation-circle fa-4x" aria-hidden="true"></i>    </div>    <div class="col-lg-11 col-md-10 custom-alert-text">      
+<p>Setting these values too high may result in reduced accuracy and/or skipped steps. Reducing acceleration may help to achieve higher top speeds.</p>
+    </div>  </div>
+</div>
+
+<hr>
 
 <h2 id="extras-1">Extras 1</h2>
 
