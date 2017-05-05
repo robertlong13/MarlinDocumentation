@@ -38,14 +38,14 @@
 <meta property="og:url" content="http://marlinfw.org/docs/configuration/configuration.html">
 <meta property="og:site_name" content="Marlin 3D Printer Firmware">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-05-05T02:47:36+01:00">
+<meta property="article:published_time" content="2017-05-05T03:27:53+01:00">
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
 "headline": "Configuring Marlin 1.1",
 "author": {"@type": "Person",
 "name": "Sarf2k4"},
-"datePublished": "2017-05-05T02:47:36+01:00",
+"datePublished": "2017-05-05T03:27:53+01:00",
 "description": "Complete guide to Marlin configuration options.",
 "publisher": {"@type": "Organization",
 "name": "Sarf2k4",
@@ -3141,80 +3141,182 @@ Tip: 0.02 mm is normally acceptable for bed leveling to work.</p>
 
 <h3 id="character-lcds">Character LCDs</h3>
 
-<ul>
-  <li>
-<code class="highlighter-rouge">ULTIMAKERCONTROLLER</code>: The original Ultimaker Controller.</li>
-  <li>
-<code class="highlighter-rouge">ULTIPANEL</code>: <a href="http://www.thingiverse.com/thing:15081">ULTIPANEL</a> as seen on Thingiverse.</li>
-  <li>
-<code class="highlighter-rouge">PANEL_ONE</code>: <a href="http://reprap.org/wiki/PanelOne">PanelOne from T3P3</a> (via RAMPS 1.4 AUX2/AUX3). A variant of <code class="highlighter-rouge">ULTIMAKERCONTROLLER</code>.</li>
-  <li>
-<code class="highlighter-rouge">REPRAP_DISCOUNT_SMART_CONTROLLER</code>: <a href="http://reprap.org/wiki/RepRapDiscount_Smart_Controller">RepRapDiscount Smart Controller</a>. Usually sold with a white PCB.</li>
-  <li>
-<code class="highlighter-rouge">G3D_PANEL</code>: <a href="http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel">Gadgets3D G3D LCD/SD Controller</a>. Usually sold with a blue PCB.</li>
-  <li>
-<code class="highlighter-rouge">RIGIDBOT_PANEL</code>: <a href="http://www.inventapart.com/">RigidBot Panel V1.0</a>.</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">ULTIMAKERCONTROLLER</code></td>
+      <td>The original Ultimaker Controller.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ULTIPANEL</code></td>
+      <td>
+<a href="http://www.thingiverse.com/thing:15081">ULTIPANEL</a> as seen on Thingiverse.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">PANEL_ONE</code></td>
+      <td>
+<a href="http://reprap.org/wiki/PanelOne">PanelOne from T3P3</a> (via RAMPS 1.4 AUX2/AUX3). A variant of <code class="highlighter-rouge">ULTIMAKERCONTROLLER</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">REPRAP_DISCOUNT_SMART_CONTROLLER</code></td>
+      <td>
+<a href="http://reprap.org/wiki/RepRapDiscount_Smart_Controller">RepRapDiscount Smart Controller</a>. Usually sold with a white PCB.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">G3D_PANEL</code></td>
+      <td>
+<a href="http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel">Gadgets3D G3D LCD/SD Controller</a>. Usually sold with a blue PCB.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">RIGIDBOT_PANEL</code></td>
+      <td>
+<a href="http://www.inventapart.com/">RigidBot Panel V1.0</a>.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="graphical-lcds">Graphical LCDs</h3>
 
-<ul>
-  <li>
-<code class="highlighter-rouge">CARTESIO_UI</code>: <a href="http://mauk.cc/webshop/cartesio-shop/electronics/user-interface">Cartesio UI</a>.</li>
-  <li>
-<code class="highlighter-rouge">MAKRPANEL</code>: <a href="http://reprap.org/wiki/MaKr3d_MaKrPanel">MaKr3d Makr-Panel</a> with graphic controller and SD support.</li>
-  <li>
-<code class="highlighter-rouge">REPRAPWORLD_GRAPHICAL_LCD</code>: <a href="https://reprapworld.com/?products_details&amp;products_id/1218">ReprapWorld Graphical LCD</a>.</li>
-  <li>
-<code class="highlighter-rouge">VIKI2</code>: <a href="http://panucatt.com">Panucatt Devices</a> <a href="http://panucatt.com">Viki 2.0</a>.</li>
-  <li>
-<code class="highlighter-rouge">miniVIKI</code>: <a href="http://panucatt.com">mini Viki with Graphic LCD</a>.</li>
-  <li>
-<code class="highlighter-rouge">ELB_FULL_GRAPHIC_CONTROLLER</code>: <a href="https://github.com/eboston/Adafruit-ST7565-Full-Graphic-Controller/">Adafruit ST7565 Full Graphic Controller</a>.</li>
-  <li>
-<code class="highlighter-rouge">REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER</code>: <a href="http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller">RepRapDiscount Full Graphic Smart Controller</a>.</li>
-  <li>
-<code class="highlighter-rouge">MINIPANEL</code>: <a href="http://reprap.org/wiki/Mini_panel">MakerLab Mini Panel</a> with graphic controller and SD support.</li>
-  <li>
-<code class="highlighter-rouge">BQ_LCD_SMART_CONTROLLER</code>: BQ LCD Smart Controller shipped with the BQ Hephestos 2 and Witbox 2.</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">CARTESIO_UI</code></td>
+      <td>
+<a href="http://mauk.cc/webshop/cartesio-shop/electronics/user-interface">Cartesio UI</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">MAKRPANEL</code></td>
+      <td>
+<a href="http://reprap.org/wiki/MaKr3d_MaKrPanel">MaKr3d Makr-Panel</a> with graphic controller and SD support.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">REPRAPWORLD_GRAPHICAL_LCD</code></td>
+      <td>
+<a href="https://reprapworld.com/?products_details&amp;products_id/1218">ReprapWorld Graphical LCD</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">VIKI2</code></td>
+      <td>
+<a href="http://panucatt.com">Panucatt Devices</a> <a href="http://panucatt.com">Viki 2.0</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">miniVIKI</code></td>
+      <td>
+<a href="http://panucatt.com">mini Viki with Graphic LCD</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ELB_FULL_GRAPHIC_CONTROLLER</code></td>
+      <td>
+<a href="https://github.com/eboston/Adafruit-ST7565-Full-Graphic-Controller/">Adafruit ST7565 Full Graphic Controller</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER</code></td>
+      <td>
+<a href="http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller">RepRapDiscount Full Graphic Smart Controller</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">MINIPANEL</code></td>
+      <td>
+<a href="http://reprap.org/wiki/Mini_panel">MakerLab Mini Panel</a> with graphic controller and SD support.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">BQ_LCD_SMART_CONTROLLER</code></td>
+      <td>BQ LCD Smart Controller shipped with the BQ Hephestos 2 and Witbox 2.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="keypad">Keypad</h3>
+<h3 id="keypads">Keypads</h3>
 
-<ul>
-  <li>
-<code class="highlighter-rouge">REPRAPWORLD_KEYPAD</code>: <a href="http://reprapworld.com/?products_details&amp;products_id=202&amp;cPath=1591_1626">RepRapWorld Keypad v1.1</a> Use <code class="highlighter-rouge">REPRAPWORLD_KEYPAD_MOVE_STEP</code> to set how much the robot should move on each keypress (e.g., 10mm per click).</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">REPRAPWORLD_KEYPAD</code></td>
+      <td>
+<a href="http://reprapworld.com/?products_details&amp;products_id=202&amp;cPath=1591_1626">RepRapWorld Keypad v1.1</a> Use <code class="highlighter-rouge">REPRAPWORLD_KEYPAD_MOVE_STEP</code> to set how much the robot should move on each keypress (e.g., 10mm per click).</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="i2c-character-lcds">I2C Character LCDs</h3>
 
 <p>These controllers all require the <a href="https://github.com/kiyoshigawa/LiquidCrystal_I2C">LiquidCrystal_I2C library</a>.</p>
 
-<ul>
-  <li>
-<code class="highlighter-rouge">RA_CONTROL_PANEL</code>: Elefu RA Board Control Panel</li>
-  <li>
-<code class="highlighter-rouge">LCD_I2C_SAINSMART_YWROBOT</code>: Sainsmart <a href="http://henrysbench.capnfatz.com/henrys-bench/arduino-displays/ywrobot-lcm1602-iic-v1-lcd-arduino-tutorial/">YWRobot LCM1602 LCD Display</a>.</li>
-  <li>
-<code class="highlighter-rouge">LCM1602</code>: Generic LCM1602 LCD adapter</li>
-  <li>
-<code class="highlighter-rouge">LCD_I2C_PANELOLU2</code>: PANELOLU2 LCD with status LEDs, separate encoder and click inputs. The click input can either be directly connected to a pin (if <code class="highlighter-rouge">BTN_ENC</code> is defined) or read through I2C (with <code class="highlighter-rouge">BTN_ENC</code> undefined). Requires <a href="https://github.com/lincomatic/LiquidTWI2">LiquidTWI2 library</a> v1.2.3 or later.</li>
-  <li>
-<code class="highlighter-rouge">LCD_I2C_VIKI</code>: Panucatt VIKI LCD with status LEDs, integrated click &amp; L/R/U/D buttons, separate encoder inputs.</li>
-  <li>
-<code class="highlighter-rouge">SAV_3DLCD</code>: Shift register panels. <a href="https://goo.gl/aJJ4sH">2 wire Non-latching LCD SR</a>. See <a href="http://reprap.org/wiki/SAV_3D_LCD">LCD configuration</a>.</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">RA_CONTROL_PANEL</code></td>
+      <td>Elefu RA Board Control Panel</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">LCD_I2C_SAINSMART_YWROBOT</code></td>
+      <td>Sainsmart <a href="http://henrysbench.capnfatz.com/henrys-bench/arduino-displays/ywrobot-lcm1602-iic-v1-lcd-arduino-tutorial/">YWRobot LCM1602 LCD Display</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">LCM1602</code></td>
+      <td>Generic LCM1602 LCD adapter</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">LCD_I2C_PANELOLU2</code></td>
+      <td>PANELOLU2 LCD with status LEDs, separate encoder and click inputs. The click input can either be directly connected to a pin (if <code class="highlighter-rouge">BTN_ENC</code> is defined) or read through I2C (with <code class="highlighter-rouge">BTN_ENC</code> undefined). Requires <a href="https://github.com/lincomatic/LiquidTWI2">LiquidTWI2 library</a> v1.2.3 or later.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">LCD_I2C_VIKI</code></td>
+      <td>Panucatt VIKI LCD with status LEDs, integrated click &amp; L/R/U/D buttons, separate encoder inputs.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">SAV_3DLCD</code></td>
+      <td>Shift register panels. <a href="https://goo.gl/aJJ4sH">2 wire Non-latching LCD SR</a>. See <a href="http://reprap.org/wiki/SAV_3D_LCD">LCD configuration</a>.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="i2c-graphical-lcds">I2C Graphical LCDs</h3>
 
 <p>These controllers all require the <a href="https://github.com/kiyoshigawa/LiquidCrystal_I2C">LiquidCrystal_I2C library</a>.</p>
 
-<ul>
-  <li>
-<code class="highlighter-rouge">U8GLIB_SSD1306</code>: SSD1306 OLED full graphics generic display.</li>
-  <li>
-<code class="highlighter-rouge">SAV_3DGLCD</code>: SAV OLED LCD module support using either SSD1306 or SH1106 based LCD modules.</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">U8GLIB_SSD1306</code></td>
+      <td>SSD1306 OLED full graphics generic display.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">SAV_3DGLCD</code></td>
+      <td>SAV OLED LCD module support using either SSD1306 or SH1106 based LCD modules.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="extras-2">Extras 2</h2>
 
